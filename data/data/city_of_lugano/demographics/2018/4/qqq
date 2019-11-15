@@ -1,0 +1,41 @@
+x q_demografia_u_d.json
+x q_demografia_u_d_arrivi.json
+x q_demografia_u_d_partenze.json
+x q_demografia_u_d_nazionalita.json
+x q_demografia_u_d_tipo_3.json
+x q_demografia_u_d_tipo.json
+x q_evoluzioneAnno.json
+x q_evoluzioneDomiciliati.json
+x q_pop_residenti.json
+x q_pop_secondari.json
+x q_pop_soggiornanti.json
+x q_movpop_arrivi.json
+x q_movpop_partenze.json
+  
+x q_quartieri_demografia_u_d.json
+x q_quartieri_demografia_u_d_arrivi.json
+x q_quartieri_demografia_u_d_partenze.json
+x q_quartieri_demografia_u_d_nazionalita.json
+x q_quartieri_demografia_u_d_tipo_3.json
+x q_quartieri_demografia_u_d_tipo.json
+x q_quartieri_evoluzioneAnno.json
+x q_quartieri_evoluzioneDomiciliati.json
+x q_quartieri_pop_residenti.json
+x q_quartieri_pop_secondari.json
+x q_quartieri_pop_soggiornanti.json
+x q_quartieri.json
+  
+x q_comparti_demografia_u_d.json
+x q_comparti_demografia_u_d_arrivi.json
+x q_comparti_demografia_u_d_partenze.json
+x q_comparti_demografia_u_d_nazionalita.json
+x q_comparti_demografia_u_d_tipo_3.json
+x q_comparti_demografia_u_d_tipo.json
+x q_comparti_evoluzioneAnno.json
+x q_comparti_evoluzioneDomiciliati.json
+x q_comparti_pop_residenti.json
+x q_comparti_pop_secondari.json
+x q_comparti_pop_soggiornanti.json
+  q_comparti.json
+  
+  

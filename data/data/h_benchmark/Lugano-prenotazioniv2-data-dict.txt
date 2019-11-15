@@ -1,0 +1,37 @@
+- Prenotazione ID: codice univoco di prenotazione
+- Arrivo: data di inizio soggiorno/ check in
+- Partenza: data di fine soggiorno/check out
+- Durata: data partenza - data arrivo
+- Data Creazione: data di inserimento a sistema della prenotazione, ovvero il giorno in cui l’ospite ha prenotato il soggiorno
+- Data Cancellazione: se la prenotazione è stata cancellata il campo viene popolato indicando il giorno in cui la prenotazione è stata disdetta
+- Camere Vendute: numero di camere vendute per la prenotazione
+- Ospiti: numero di ospiti per la prenotazione
+- Ricavo Complessivo: ricavo camere + ricavo relativo il trattamento (B&B, mezza pensione, pensione completa)
+- Ricavo Camere: ricavo riconducibile all’esclusivo valore della vendita della sola camera (escluso il ricavo riconducibile al trattamento)
+- Tipo Camera: ogni hotel utilizza una categorizzazione differente per indicare la categoria di camera (es. standard, deluxe, suite,…)
+- Stato - stato della prenotazione
+    -- Cancellata
+    -- Check-in - l’ospite ha effettuato il check in
+    -- Check-out - l’ospite ha effettuato il check out
+    -- Inserita - prenotazione confermata
+    -- No show - l’ospite non si è presentato alla data del check in e non ha disdetto la camera
+- Trattamento
+    -- Bed & Breakfast
+    -- Mezza Pensione
+    -- Pensione Completa
+    -- Solo Camera
+- Canale
+    -- Diretto: tutte le prenotazioni dirette, es walk-in, fax, email, telefonata, ecc.
+    -- Agenzie - Booking: tutte le prenotazioni ricevute da Booking.com.
+    -- Agenzie - Expedia: tutte le prenotazioni ricevute da Expedia.it.
+    -- Agenzie - OTA: tutte le prenotazioni intermediate da agenzia on line diverse da Booking e Expedia, o, se gestisci un unico source code indifferenziato per le OTA, in questo caso anche Booking ed Expedia.
+    -- Agenzie - Portale Destinazione: tutte le prenotazioni ricevute dal canale di prenotazione della destinazione.
+    -- Sito Web: tutte le prenotazioni ricevute tramite sito web ufficiale della struttura o di catena.
+    -- Altri Canali: tutte le prenotazioni ricevute da tutti gli altri canali non sopra citati (es. Agenzie off-line, Tour Operator).
+- Mercato
+    -- Retail: cliente individuale che prenota senza il tramite di alcuna attività commerciale pregressa.
+    -- Gruppi Business: prenotazioni di gruppo di clienti Business (convegni, congressuale).
+    -- Negotiated: clienti individuali che usufruiscono di una tariffa di convenzione accordata con la loro azienda.
+    -- Gruppi Leisure: prenotazione di gruppi di clienti in vacanza.
+    -- Wholesaler: clienti individuali che prenotano attraverso agenzie di viaggio o tour operator che hanno degli accordi commerciali con la struttura e che usufruiscono di tariffe molto vantaggiose.
+- Nazionalità dell’ospite che ha prenotato
