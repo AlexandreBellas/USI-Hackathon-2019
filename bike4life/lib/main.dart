@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './location_input.dart';
+import './widgets/location_input.dart';
 
 void main() => runApp(MyApp());
 

@@ -13,6 +13,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="bike4life"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyATonUpNaMgyGig91zdyc38Oku5kJ1MLL8"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
