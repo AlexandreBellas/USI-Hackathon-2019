@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './auth-screen.dart';
+import './auth.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: AuthScreen(),
     );
   }
 }
@@ -23,13 +25,16 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
+  static List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Find bikes',
+      'Index 0: Map',
       style: optionStyle,
     ),
+    //LocationInput(),
     Text(
       'Index 1: Coupons',
       style: optionStyle,
@@ -38,6 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 2: Rankings',
       style: optionStyle,
     ),
+
     Text(
       'Index 3: Profile',
       style: optionStyle,
