@@ -2,6 +2,7 @@ import 'package:bike4life/screens/map_screen.dart';
 import 'package:flutter/material.dart';
 import './widgets/location_input.dart';
 import './widgets/profile.dart';
+import './widgets/ranking.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,10 +37,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 1: Coupons',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: Rankings',
-      style: optionStyle,
-    ),
+    Ranking(),
     Profile(),
   ];
 
