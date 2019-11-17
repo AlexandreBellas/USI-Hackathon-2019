@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import './location_input.dart';
-=======
 import './profile.dart';
->>>>>>> flutter-profile-real
 
 void main() => runApp(MyApp());
 
