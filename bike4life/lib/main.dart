@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './profile.dart';
 import './ranking.dart';
+import './coupons.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,10 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 0: Find bikes',
       style: optionStyle,
     ),
-    Text(
-      'Index 1: Coupons',
-      style: optionStyle,
-    ),
+    Coupons(),
     Ranking(),
     Profile(),
   ];

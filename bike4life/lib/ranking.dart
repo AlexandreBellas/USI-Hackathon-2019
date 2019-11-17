@@ -9,7 +9,7 @@ class Ranking extends StatelessWidget {
         SliverAppBar(
           title: Text("Ranking"),
           titleSpacing: 15.0,
-          expandedHeight: 50.0,
+          expandedHeight: 150.0,
           floating: false,
         ),
         SliverList(
