@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './location_input.dart';
+import './profile.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,10 +39,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 2: Rankings',
       style: optionStyle,
     ),
-    Text(
-      'Index 3: Profile',
-      style: optionStyle,
-    ),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {
