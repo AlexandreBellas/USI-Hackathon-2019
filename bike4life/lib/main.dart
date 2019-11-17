@@ -1,5 +1,5 @@
+import 'package:bike4life/screens/map_screen.dart';
 import 'package:flutter/material.dart';
-import './widgets/location_input.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,7 +29,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     fontWeight: FontWeight.bold,
   );
   static List<Widget> _widgetOptions = <Widget>[
-    LocationInput(),
+    MapScreen(),
     Text(
       'Index 1: Coupons',
       style: optionStyle,
