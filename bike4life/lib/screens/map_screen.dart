@@ -1,5 +1,6 @@
 // import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 // import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 // import 'package:http/http.dart' as http;
@@ -21,7 +22,6 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   LatLng _pickedLocation;
-  bool _isBikeChoosen = false;
   String _nameBikeChoosen;
 
   final bikesLocs = {
@@ -74,11 +74,12 @@ class _MapScreenState extends State<MapScreen> {
   //   return (await fi.image.toByteData(format: ui.ImageByteFormat.png)).buffer.asUint8List();
   // }
 
-  void _onTapBike(bikePos) {
+  Future<void> _onTapBike(bikePos) async {
     setState(() {
-      _isBikeChoosen = true;
       _nameBikeChoosen = bikePos['name'];
     });
+
+    print(_nameBikeChoosen);
   }
 
   Future<void> _onMapCreated(GoogleMapController gmc) async {
@@ -95,12 +96,40 @@ class _MapScreenState extends State<MapScreen> {
           infoWindow: InfoWindow(
             title: bikePos['name'],
             snippet: "Multiplication score: 30%",
-            onTap: () => _onTapBike(bikePos),
+            onTap: () {
+              _onTapBike(bikePos);
+              _settingModalBottomSheet(context, _nameBikeChoosen);
+            } 
           ),
         );
         _markers[bikePos['name']] = marker;
       }
     });
+  }
+
+  void _settingModalBottomSheet(context, bikeName) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            child: new Wrap(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(10),
+                  child: Text(
+                    'You selected the ' + bikeName,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                  ),
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.directions_bike),
+                  title: new Text('Get the bike'),
+                  onTap: null,
+                ),
+              ],
+            ),
+          );
+        });
   }
 
   @override
@@ -117,14 +146,28 @@ class _MapScreenState extends State<MapScreen> {
           ),
           myLocationEnabled: true,
           onMapCreated: _onMapCreated,
+          // onTap: (latlng){
+          //   for (var b in bikesLocs){
+          //     if(b['latitude'] == latlng.latitude && b['longitude'] == latlng.longitude){
+          //       _onTapBike(b);
+          //       break;
+          //     }
+          //   }
+          // },
+          // onLongPress: (latlng) async {
+          //   for (var b in bikesLocs){
+          //     if(b['latitude'] == latlng.latitude && b['longitude'] == latlng.longitude){
+          //       await _onTapBike(b);
+          //       _settingModalBottomSheet(context, _nameBikeChoosen);
+          //       break;
+          //     }
+          //   }            
+          // },
           markers: _markers.values.toSet(),
         ),
-        Container(
-          width: double.infinity,
-          alignment: Alignment.bottomCenter,
-          child: _isBikeChoosen ? PopUpBike(_nameBikeChoosen) : null,
-        )
       ],
     );
   }
 }
+
+//PopUpBike(_nameBikeChoosen)
