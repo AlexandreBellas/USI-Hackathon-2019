@@ -13,6 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: _title,
       home: MyStatefulWidget(),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.green[900],
+        accentColor: Colors.green[900],
+        canvasColor: Colors.green[50],
+        backgroundColor: Colors.greenAccent[800],
+
+      ),
     );
   }
 }
@@ -73,7 +81,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.green[800],
         unselectedItemColor: Colors.black45,
         onTap: _onItemTapped,
       ),

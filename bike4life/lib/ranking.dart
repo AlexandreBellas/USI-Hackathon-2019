@@ -7,7 +7,14 @@ class Ranking extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          title: Text("Ranking"),
+          backgroundColor: Colors.green[100],
+          title: Text(
+            "Ranking",
+            style: TextStyle(
+                color: Colors.green[900],
+                fontWeight: FontWeight.bold,
+                fontSize: 48),
+          ),
           titleSpacing: 15.0,
           expandedHeight: 150.0,
           floating: false,
