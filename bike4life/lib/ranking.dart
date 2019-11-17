@@ -8,8 +8,8 @@ class Ranking extends StatelessWidget {
       slivers: <Widget>[
         SliverAppBar(
           title: Text("Ranking"),
-          titleSpacing: 0.0,
-          expandedHeight: 90.0,
+          titleSpacing: 15.0,
+          expandedHeight: 50.0,
           floating: false,
         ),
         SliverList(
