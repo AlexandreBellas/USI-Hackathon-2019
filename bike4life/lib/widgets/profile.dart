@@ -31,14 +31,18 @@ class Profile extends StatelessWidget {
                   Text(
                     'Aida',
                     style: TextStyle(
+
+                      color: Colors.green[900],
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: 48,
                     ),
                   ),
                   Text(
                     'Gasanova',
                     style: TextStyle(
-                      fontSize: 18,
+
+                      color: Colors.green[900],
+                      fontSize: 32,
                     ),
                   ),
                 ],
@@ -54,12 +58,12 @@ class Profile extends StatelessWidget {
               margin: EdgeInsets.only(right: 30),
               child: Text(
                 'XP',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70, color: Colors.orange),
               ),
             ),
             Text(
               '2000',
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 50, color: Colors.orange),
             ),
           ],
         ),
@@ -84,6 +88,7 @@ class Profile extends StatelessWidget {
               Text(
                 '31',
                 style: TextStyle(
+                  color: Colors.orange,
                   fontSize: 50,
                 ),
               ),
@@ -95,6 +100,7 @@ class Profile extends StatelessWidget {
           child: Text(
             '#20',
             style: TextStyle(
+              color: Colors.green[900],
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
               fontSize: 70
