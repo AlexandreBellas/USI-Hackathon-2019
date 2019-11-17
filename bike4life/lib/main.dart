@@ -1,8 +1,8 @@
 import 'package:bike4life/screens/map_screen.dart';
 import 'package:flutter/material.dart';
-import './widgets/location_input.dart';
 import './widgets/profile.dart';
 import './widgets/ranking.dart';
+import './widgets/coupons.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,6 +26,7 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(
     fontSize: 30,
@@ -33,10 +34,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   );
   static List<Widget> _widgetOptions = <Widget>[
     MapScreen(),
-    Text(
-      'Index 1: Coupons',
-      style: optionStyle,
-    ),
+    Coupons(),
     Ranking(),
     Profile(),
   ];

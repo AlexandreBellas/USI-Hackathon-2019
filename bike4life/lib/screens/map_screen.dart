@@ -1,28 +1,23 @@
-// import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
-// import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-// import 'package:http/http.dart' as http;
-// import 'dart:ui' as ui;
-
 import '../models/place.dart';
-import '../widgets/message-chosen-bike.dart';
+import '../screens/end_route_screen.dart';
 
 class MapScreen extends StatefulWidget {
   final PlaceLocation initialLocation;
 
-  MapScreen(
-      {this.initialLocation =
-          const PlaceLocation(latitude: 46.0101, longitude: 8.9600)});
+  MapScreen({
+    this.initialLocation =
+        const PlaceLocation(latitude: 46.0101, longitude: 8.9600),
+  });
 
   @override
   _MapScreenState createState() => _MapScreenState();
 }
 
 class _MapScreenState extends State<MapScreen> {
-  LatLng _pickedLocation;
   String _nameBikeChoosen;
+  double userXP = 1500;
 
   final bikesLocs = {
     {
@@ -94,42 +89,67 @@ class _MapScreenState extends State<MapScreen> {
           // icon: BitmapDescriptor.fromAsset('../../assets/images/bike-icon.png'),
           icon: BitmapDescriptor.defaultMarkerWithHue(30),
           infoWindow: InfoWindow(
-            title: bikePos['name'],
-            snippet: "Multiplication score: 30%",
-            onTap: () {
-              _onTapBike(bikePos);
-              _settingModalBottomSheet(context, _nameBikeChoosen);
-            } 
-          ),
+              title: bikePos['name'],
+              snippet: "Multiplication score: 30%",
+              onTap: () {
+                _onTapBike(bikePos);
+                _settingModalBottomSheet(context, bikePos);
+              }),
         );
         _markers[bikePos['name']] = marker;
       }
     });
   }
 
-  void _settingModalBottomSheet(context, bikeName) {
+  void _startAndEndRoute(bikePos) {
+    //calculation of distance
+    //...
+    //retrieving the multiplication score
+    //...
+
+    var multScore = 0.3;
+    var distance = 100; //meters
+    userXP += multScore * distance;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        fullscreenDialog: true,
+        builder: (ctx) => EndRouteScreen(
+          distance.toString(),
+          multScore.toString(),
+          userXP.toString(),
+        ),
+      ),
+    );
+  }
+
+  void _settingModalBottomSheet(context, bikeData) {
     showModalBottomSheet(
-        context: context,
-        builder: (BuildContext bc) {
-          return Container(
-            child: new Wrap(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.all(10),
-                  child: Text(
-                    'You selected the ' + bikeName,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
-                  ),
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          child: new Wrap(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Text(
+                  'You selected the ' + bikeData['name'],
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
                 ),
-                new ListTile(
-                  leading: new Icon(Icons.directions_bike),
-                  title: new Text('Get the bike'),
-                  onTap: null,
-                ),
-              ],
-            ),
-          );
-        });
+              ),
+              new ListTile(
+                leading: new Icon(Icons.directions_bike),
+                title: new Text('Get the bike'),
+                onTap: () {
+                  _startAndEndRoute(bikeData);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -161,7 +181,7 @@ class _MapScreenState extends State<MapScreen> {
           //       _settingModalBottomSheet(context, _nameBikeChoosen);
           //       break;
           //     }
-          //   }            
+          //   }
           // },
           markers: _markers.values.toSet(),
         ),
