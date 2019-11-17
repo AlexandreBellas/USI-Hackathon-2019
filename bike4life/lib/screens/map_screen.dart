@@ -189,5 +189,3 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 }
-
-//PopUpBike(_nameBikeChoosen)
