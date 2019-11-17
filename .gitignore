@@ -1,3 +1,4 @@
 data/analysis/.ipnyb_checkpoints
 data/data/tpl/lines_events/bus_lugano.parquet
 Traffic Index/Traffic_Index.csv
+data/analysis/lon_lat.csv
