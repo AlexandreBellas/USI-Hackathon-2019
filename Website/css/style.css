@@ -1,0 +1,91 @@
+body {
+  background-color: white;
+}
+h1, h2, h3 {
+  color: #151515;
+  font-family: 'Roboto', sans-serif;
+}
+p, b {
+  color: #151515;
+}
+.container {
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 700px;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: #151515;
+}
+img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+
+/* AlERT */
+.alert_GREEN {
+  padding: 20px;
+  background-color: #007500;
+  color: white;
+}
+.alert_RED {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+.alert_YELLOW {
+  padding: 20px;
+  background-color: #FFD500;
+  color: black;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
